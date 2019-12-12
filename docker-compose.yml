@@ -1,0 +1,36 @@
+version: '2.2'
+services:
+  openldap:
+    build:
+      context: .docker
+      dockerfile: ldap/Dockerfile
+    container_name: openldap
+    command: '--loglevel debug'
+    init: true
+    ports:
+      - 389:389
+      - 636:636
+    environment:
+      - 'LDAP_BACKEND=bdb'
+      - 'LDAP_ORGANISATION="GIP RECIA"'
+      - 'LDAP_DOMAIN=esco-centre.fr'
+      - 'LDAP_BASE_DN=dc=esco-centre,dc=fr'
+      #- 'LDAP_LOG_LEVEL=-1'
+      - 'LDAP_ADMIN_PASSWORD=admin'
+      - 'LDAP_READONLY_USER: "false"'
+    volumes:
+      - 'ldap-data:/var/lib/ldap'
+      - 'ldap-config:/etc/ldap/slapd.d'
+#  phpldapadmin:
+#    image: osixia/phpldapadmin:latest
+#    container_name: phpldapadmin
+#    environment:
+#      PHPLDAPADMIN_LDAP_HOSTS: "openldap"
+#      PHPLDAPADMIN_HTTPS: "false"
+#    ports:
+#      - "8080:80"
+#    depends_on:
+#      - openldap
+volumes:
+  ldap-data: null
+  ldap-config: null
