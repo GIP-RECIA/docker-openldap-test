@@ -4,6 +4,14 @@ objectClass: groupOfNames
 cn: esco:admin:local:admin_DE L IROISE_0291595B
 member:
 
+dn: cn=esco:admin:local:admin_DE L IROISE_0290009C,ou=groups,dc=esco-centre,dc=fr
+objectClass: eduMember
+objectClass: groupOfNames
+cn: esco:admin:local:admin_DE L IROISE_0290009C
+member: uid=F1700k3r,ou=people,dc=esco-centre,dc=fr
+hasMember: F1700k3r
+isMemberOf: esco:admin:Publication_contenus:DE L IROISE_0290009C:MANAGER
+
 dn: cn=esco:admin:CAHIER_TEXTE:local:DE L IROISE_0290009C,ou=groups,dc=esco-centre,dc=fr
 objectClass: eduMember
 objectClass: groupOfNames
@@ -108,27 +116,35 @@ dn: cn=esco:admin:Publication_contenus:DE L IROISE_0291595B:MANAGER,ou=groups,dc
 objectClass: eduMember
 objectClass: groupOfNames
 cn: esco:admin:Publication_contenus:DE L IROISE_0291595B:MANAGER
-member:
+member: uid=F1700k2y,ou=people,dc=esco-centre,dc=fr
+hasMember: F1700k2y
 
 dn: cn=esco:admin:Publication_contenus:DE L IROISE_0290009C:MANAGER,ou=groups,dc=esco-centre,dc=fr
 objectClass: eduMember
 objectClass: groupOfNames
 cn: esco:admin:Publication_contenus:DE L IROISE_0290009C:MANAGER
-member:
+member: uid=F1700k3r,ou=people,dc=esco-centre,dc=fr
+member: cn=esco:admin:local:admin_DE L IROISE_0290009C,ou=groups,dc=esco-centre,dc=fr
+hasMember: F1700k3r
+hasMember: esco:admin:local:admin_DE L IROISE_0290009C
 
 dn: cn=esco:admin:Publication_contenus:DE L IROISE_0290009C:LOOKOVER,ou=groups,dc=esco-centre,dc=fr
 objectClass: eduMember
 objectClass: groupOfNames
 cn: esco:admin:Publication_contenus:DE L IROISE_0290009C:LOOKOVER
 member: cn=esco:Applications:Publication_contenus:DE L IROISE_0290009C,ou=groups,dc=esco-centre,dc=fr
+member: uid=F1700k3r,ou=people,dc=esco-centre,dc=fr
 hasMember: esco:Applications:Publication_contenus:DE L IROISE_0290009C
+hasMember: F1700k3r
 
 dn: cn=esco:admin:Publication_contenus:DE L IROISE_0291595B:LOOKOVER,ou=groups,dc=esco-centre,dc=fr
 objectClass: eduMember
 objectClass: groupOfNames
 cn: esco:admin:Publication_contenus:DE L IROISE_0291595B:LOOKOVER
 member: cn=esco:Applications:Publication_contenus:DE L IROISE_0291595B,ou=groups,dc=esco-centre,dc=fr
+member: uid=F1700k2y,ou=people,dc=esco-centre,dc=fr
 hasMember: esco:Applications:Publication_contenus:DE L IROISE_0291595B
+hasMember: F1700k2y
 
 dn: cn=esco:admin:sarapis:local:sarapis_DE L IROISE_0290009C,ou=groups,dc=esco-centre,dc=fr
 objectClass: eduMember
@@ -3866,15 +3882,17 @@ dn: cn=esco:Applications:Publication_contenus:DE L IROISE_0290009C,ou=groups,dc=
 objectClass: eduMember
 objectClass: groupOfNames
 cn: esco:Applications:Publication_contenus:DE L IROISE_0290009C
-member:
+member: uid=F1700k3r,ou=people,dc=esco-centre,dc=fr
+hasMember: F1700k3r
 isMemberOf: esco:admin:Publication_contenus:DE L IROISE_0290009C:LOOKOVER
 
 dn: cn=esco:Applications:Publication_contenus:DE L IROISE_0291595B,ou=groups,dc=esco-centre,dc=fr
 objectClass: eduMember
 objectClass: groupOfNames
 cn: esco:Applications:Publication_contenus:DE L IROISE_0291595B
-member:
+member: uid=F1700k2y,ou=people,dc=esco-centre,dc=fr
 isMemberOf: esco:admin:Publication_contenus:DE L IROISE_0291595B:LOOKOVER
+hasMember: F1700k2y
 
 dn: cn=esco:Applications:Publication_annonces:DE L IROISE_0290009C,ou=groups,dc=esco-centre,dc=fr
 objectClass: eduMember
