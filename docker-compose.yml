@@ -19,8 +19,10 @@ services:
       - 'LDAP_ADMIN_PASSWORD=admin'
       - 'LDAP_READONLY_USER: "false"'
     volumes:
-      - 'ldap-data:/var/lib/ldap'
-      - 'ldap-config:/etc/ldap/slapd.d'
+      #- /srv/docker/openldap/container/data:/var/lib/ldap
+      - ldap-data:/var/lib/ldap
+      #- /srv/docker/openldap/container/config:/etc/ldap/slapd.d
+      - ldap-config:/etc/ldap/slapd.d
 #  phpldapadmin:
 #    image: osixia/phpldapadmin:latest
 #    container_name: phpldapadmin

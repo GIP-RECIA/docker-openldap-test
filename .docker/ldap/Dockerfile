@@ -3,11 +3,8 @@ LABEL maintainer="GIP RECIA - Julien Gribonvald <julien.gribonvald@recia.fr>"
 
 RUN rm -Rf /container/service/slapd/assets/config/bootstrap/schema/mmc
 
-COPY startup.sh /container/service/slapd/
-RUN ls -l /container/service/slapd/*
-
 ADD bootstrap /container/service/slapd/assets/config/bootstrap
-ADD init-db /container/service/slapd/assets/init-db
+#ADD init-db /container/service/slapd/assets/init-db
 #ADD certs /container/service/slapd/assets/certs
 #ADD environment /container/environment/01-custom
 
