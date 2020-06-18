@@ -1,3 +1,10 @@
+dn: cn=esco:admin:central,ou=groups,dc=esco-centre,dc=fr
+objectClass: eduMember
+objectClass: groupOfNames
+cn: esco:admin:central
+member: uid=admin,ou=people,dc=esco-centre,dc=fr
+hasMember: admin
+
 dn: cn=esco:admin:local:admin_DE L IROISE_0291595B,ou=groups,dc=esco-centre,dc=fr
 objectClass: eduMember
 objectClass: groupOfNames
