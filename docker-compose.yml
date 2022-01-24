@@ -17,7 +17,7 @@ services:
       - 'LDAP_BASE_DN=dc=esco-centre,dc=fr'
       #- 'LDAP_LOG_LEVEL=-1'
       - 'LDAP_ADMIN_PASSWORD=admin'
-      - 'LDAP_READONLY_USER: "false"'
+      - 'LDAP_READONLY_USER:"false"'
     volumes:
       #- /srv/docker/openldap/container/data:/var/lib/ldap
       - ldap-data:/var/lib/ldap
