@@ -9213,6 +9213,7 @@ ENTEleveEnseignements: ANGLAIS LV1
 ENTEleveRegime: DEMI-PENSIONNAIRE DANS L'ETABLISSEMENT 4
 ENTEleveStructRattachId: 1323740
 ENTEleveTransport: N
+ENTElevePersRelEleve: uid=F1290i72,ou=people,dc=esco-centre,dc=fr$50$0$2$0$0
 ENTPersonAutresPrenoms: Eline
 ENTPersonDateNaissance: 30/10/1999
 ENTPersonGARIdentifiant:: NjI1YzhjNzYtZTRjMS00NzQ2LThlNzUtYTI2YTVkNWY1ODZi
@@ -152244,3 +152245,26 @@ mail: noreply@ac-rennes.fr
 personalTitle: M
 uid: F1700k3r
 userPassword:: e3NzaGF9WkY4bWExS3YzY2c2NFQ2U0JNTzRnWTVkSHVKSXEvQ0VmakwyRVE9PQ==
+
+dn: uid=F1290i72,ou=people,dc=esco-centre,dc=fr
+objectClass: eduMember
+objectClass: ENTAuxPersRelEleve
+objectClass: ENTPerson
+objectClass: ESCOAddons
+objectClass: ESCOPersRelEleveAddons
+ENTAuxPersRelEleveEleve: uid=F1700iy8,ou=people,dc=esco-centre,dc=fr
+cn: PARENT LUCAS
+sn: LUCAS
+ENTPersonPays: FRANCE
+ENTPersonAdresse: RUE DU PARENT
+ENTPersonVille: CHAMBRAY LES TOURS
+ENTPersonCodePostal: 37170
+ESCOPersonExternalIds: PRONOTE$450a6187-e369-4f8d-97b8-97034b928ceb
+ESCOPersonExternalIds: BCDI$fcc85e76-3728-4013-a4c3-cb9f8276a443
+uid: F1290i72
+personalTitle: M
+givenName: Parent
+ENTPersonLogin: parent.lucas
+ENTPersonJointure: ENT$12456785
+ESCOPersonEtatCompte: INVALIDE
+ESCOUAI: 0290009C
