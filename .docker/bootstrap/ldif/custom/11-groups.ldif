@@ -5,6 +5,55 @@ cn: esco:admin:central
 member: uid=admin,ou=people,dc=esco-centre,dc=fr
 hasMember: admin
 
+dn: cn=cfa:admin:central,ou=groups,dc=esco-centre,dc=fr
+objectClass: eduMember
+objectClass: groupOfNames
+cn: cfa:admin:central
+member: uid=admin,ou=people,dc=esco-centre,dc=fr
+hasMember: admin
+
+dn: cn=agri:admin:central,ou=groups,dc=esco-centre,dc=fr
+objectClass: eduMember
+objectClass: groupOfNames
+cn: agri:admin:central
+member: uid=admin,ou=people,dc=esco-centre,dc=fr
+hasMember: admin
+
+dn: cn=acad:admin:central,ou=groups,dc=esco-centre,dc=fr
+objectClass: eduMember
+objectClass: groupOfNames
+cn: acad:admin:central
+member: uid=admin,ou=people,dc=esco-centre,dc=fr
+hasMember: admin
+
+dn: cn=coll:admin:central,ou=groups,dc=esco-centre,dc=fr
+objectClass: eduMember
+objectClass: groupOfNames
+cn: coll:admin:central
+member: uid=admin,ou=people,dc=esco-centre,dc=fr
+hasMember: admin
+
+dn: cn=clg37:admin:central,ou=groups,dc=esco-centre,dc=fr
+objectClass: eduMember
+objectClass: groupOfNames
+cn: clg37:admin:central
+member: uid=admin,ou=people,dc=esco-centre,dc=fr
+hasMember: admin
+
+dn: cn=clg18:admin:central,ou=groups,dc=esco-centre,dc=fr
+objectClass: eduMember
+objectClass: groupOfNames
+cn: clg18:admin:central
+member: uid=admin,ou=people,dc=esco-centre,dc=fr
+hasMember: admin
+
+dn: cn=ef2s:admin:central,ou=groups,dc=esco-centre,dc=fr
+objectClass: eduMember
+objectClass: groupOfNames
+cn: ef2s:admin:central
+member: uid=admin,ou=people,dc=esco-centre,dc=fr
+hasMember: admin
+
 dn: cn=esco:admin:local:admin_DE L IROISE_0291595B,ou=groups,dc=esco-centre,dc=fr
 objectClass: eduMember
 objectClass: groupOfNames
@@ -25244,4 +25293,3 @@ hasMember: esco:Etablissements:DE L IROISE_0290009C:TERMINALE GENERALE et TECHNO
 hasMember: esco:Etablissements:DE L IROISE_0290009C:TERMINALE GENERALE et TECHNO YC BT:Eleves_TS3
 hasMember: esco:Etablissements:DE L IROISE_0290009C:Administratifs:ACCOMPAGNEMENT ELEVES SITUATION HANDICAP
 isMemberOf: esco:admin:mediacentre:GAR:UTILISATEUR:DE L IROISE_0290009C
-

@@ -16,6 +16,13 @@ ESCOSIREN: 18450311800020
 ESCOSIRENCourant: 18450311800020
 givenName: Administrateur du Portail
 isMemberOf: esco:admin:central
+isMemberOf: cfa:admin:central
+isMemberOf: agri:admin:central
+isMemberOf: acad:admin:central
+isMemberOf: coll:admin:central
+isMemberOf: clg37:admin:central
+isMemberOf: clg18:admin:central
+isMemberOf: ef2s:admin:central
 mail: ent@recia.fr
 uid: admin
 userPassword: {SSHA}Bu080UD+TO835HSuNmZ5cjrQR51uJj9X
@@ -149043,4 +149050,3 @@ mail: noreply@ac-rennes.fr
 personalTitle: M
 uid: F1700k3r
 userPassword:: e3NzaGF9WkY4bWExS3YzY2c2NFQ2U0JNTzRnWTVkSHVKSXEvQ0VmakwyRVE9PQ==
-
