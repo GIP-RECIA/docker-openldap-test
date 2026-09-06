@@ -19,7 +19,7 @@
 # maildrop                                 #
 #------------------------------------------#
 # String IA5 multi-value                   #
-#------------------------------------------#   
+#------------------------------------------#
 attributetype ( ENT_locAttPrefixe:21 NAME 'mailDrop'
         DESC 'RFC822 Mailbox - mail drop'
         EQUALITY caseIgnoreIA5Match
