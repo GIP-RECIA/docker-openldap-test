@@ -49,6 +49,19 @@ attributetype (ENT_globAttPrefixe:320 NAME 'ENTStructureTypeStruct'
 	SYNTAX ENT_UTF8String )
 
 #------------------------------------------#
+# ENTStructureCodeTypeStruct               #
+#------------------------------------------#
+# Secondaire                               #
+# String UTF8 monovaluee                   #
+#------------------------------------------#
+attributetype (ENT_globAttPrefixe:328 NAME 'ENTStructureCodeTypeStruct'
+	DESC 'Code du type de structure'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SINGLE-VALUE
+	SYNTAX ENT_UTF8String )
+
+#------------------------------------------#
 # ENTStructureNomCourant                   #
 #------------------------------------------#
 # Secondaire                               #
@@ -160,7 +173,7 @@ objectclass ( ENT_globClassPrefixe:21 NAME 'ENTStructure'
         SUP organizationalUnit STRUCTURAL
         MUST ( ENTStructureJointure $ ENTStructureNomCourant $
                ENTStructureSIREN )
-        MAY ( ENTStructureTypeStruct $ ENTStructureResponsable $
+        MAY ( ENTStructureTypeStruct $ ENTStructureCodeTypeStruct $ ENTStructureResponsable $
               ENTStructureEmail $ ENTStructureMailSI $ ENTStructureSiteWeb $
               ENTStructureContactENT $ ENTStructureUAI $
               ESCODefaultUserProfile $ ESCODomaines $ ESCOStructureNomCourt $
@@ -179,6 +192,19 @@ objectclass ( ENT_globClassPrefixe:21 NAME 'ENTStructure'
 #------------------------------------------#
 attributetype (ENT_globAttPrefixe:308 NAME 'ENTEtablissementMinistereTutelle'
 	DESC 'Ministere de tutelle'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SINGLE-VALUE
+	SYNTAX ENT_UTF8String )
+
+#------------------------------------------#
+# ENTEtablissementCodeMinistereTutelle     #
+#------------------------------------------#
+# Secondaire                               #
+# String UTF8 monovaluee                   #
+#------------------------------------------#
+attributetype (ENT_globAttPrefixe:326 NAME 'ENTEtablissementCodeMinistereTutelle'
+	DESC 'Code du Ministere de tutelle'
 	EQUALITY caseIgnoreMatch
 	SUBSTR caseIgnoreSubstringsMatch
 	SINGLE-VALUE
@@ -260,6 +286,7 @@ attributetype (ENT_globAttPrefixe:324 NAME 'ENTStructureGroupes'
 # ENTEtablissement                         #
 #------------------------------------------#
 # Secondaire                               #
+# TODO: ENTEtablissementCodeMinistereTutelle doit passer en MUST #
 #------------------------------------------#
 objectclass ( ENT_globClassPrefixe:22 NAME 'ENTEtablissement'
         DESC 'CDC MENESR : Complete la classe ENTStructure avec les attributs relatifs a la categorie de structures Etablissements d enseignement.'
@@ -267,7 +294,7 @@ objectclass ( ENT_globClassPrefixe:22 NAME 'ENTEtablissement'
         MUST ( ENTEtablissementMinistereTutelle $ ENTEtablissementContrat )
         MAY  ( ENTEtablissementStructRattachAdmin $ ENTEtablissementStructRattachFctl $
                ENTEtablissementBassin $ ENTStructureClasses $
-               ENTStructureGroupes ) )
+               ENTStructureGroupes $ ENTEtablissementCodeMinistereTutelle ) )
 
 
 #------------------------------------------------------------------------#
@@ -288,14 +315,29 @@ attributetype (ENT_globAttPrefixe:316 NAME 'ENTServAcAcademie'
 	SYNTAX ENT_UTF8String )
 
 #------------------------------------------#
+# ENTServCodeAcAcademie                    #
+#------------------------------------------#
+# Secondaire                               #
+# String UTF8 monovaluee                   #
+#------------------------------------------#
+attributetype (ENT_globAttPrefixe:327 NAME 'ENTServCodeAcAcademie'
+	DESC 'Code de l Academie'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SINGLE-VALUE
+	SYNTAX ENT_UTF8String )
+
+#------------------------------------------#
 # ENTServAc                                #
 #------------------------------------------#
 # Secondaire                               #
+# TODO: ENTServCodeAcAcademie doit passer en MUST #
 #------------------------------------------#
 objectclass ( ENT_globClassPrefixe:24 NAME 'ENTServAc'
         DESC 'CDC MENESR : Complete la classe ENTStructure avec les attributs relatifs a la categorie de structures Services Academiques.'
         SUP ENTStructure STRUCTURAL
-        MUST ( ENTServAcAcademie) )
+        MUST ( ENTServAcAcademie)
+        MAY ( ENTServCodeAcAcademie ) )
 
 
 #------------------------------------------------------------------------#

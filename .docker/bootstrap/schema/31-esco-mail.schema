@@ -19,10 +19,9 @@
 # maildrop                                 #
 #------------------------------------------#
 # String IA5 multi-value                   #
-#------------------------------------------#
-# Attribut fourni par un schéma de l'image docker
+#------------------------------------------#   
 attributetype ( ENT_locAttPrefixe:21 NAME 'mailDrop'
-        DESC 'RFC822 Mailbox - mail alias'
+        DESC 'RFC822 Mailbox - mail drop'
         EQUALITY caseIgnoreIA5Match
         SUBSTR caseIgnoreIA5SubstringsMatch
         SYNTAX ENT_IA5String{256} )
@@ -33,7 +32,7 @@ attributetype ( ENT_locAttPrefixe:21 NAME 'mailDrop'
 # String IA5 mono-value                    #
 #------------------------------------------#   
 attributetype ( ENT_locAttPrefixe:23 NAME 'mailAlias'
-        DESC 'mail'
+        DESC 'RFC822 Mailbox - mail alias'
         EQUALITY caseIgnoreIA5Match
         SUBSTR caseIgnoreIA5SubstringsMatch
         SYNTAX ENT_IA5String SINGLE-VALUE)
@@ -70,9 +69,9 @@ objectclass ( ENT_locClassPrefixe:7 NAME 'ESCODomain' STRUCTURAL
 	
 
 #----------------------------------------------#
-#	ESCOFunctionEmail 												   #
-# Pour la gestion des mails de fonction 		   #
-# pas necessairement dans la branche mail 		 #
+#       ESCOFunctionEmail                      #
+# Pour la gestion des mails de fonction        #
+# pas necessairement dans la branche mail      #
 # peut etre dans la branche structure ou autre #
 #----------------------------------------------#
 objectclass ( ENT_locClassPrefixe:10 NAME 'ESCOFunctionEmail'
@@ -81,3 +80,15 @@ objectclass ( ENT_locClassPrefixe:10 NAME 'ESCOFunctionEmail'
 	MUST ( cn $ mail )
 	MAY ( ENTStructureSIREN $ description ) )
 
+
+#------------------------------------------------#
+#       ESCOGroupMail                            #
+# Pour la gestion des mails associés a un groupe #
+# Dans la branche groups                         #
+# -----------------------------------------------#
+
+objectclass ( ENT_locClassPrefixe:11 NAME 'ESCOGroupMail'
+    SUP top AUXILIARY
+    Desc 'Mail address for a group'
+    MUST ( cn $ mail )
+    MAY ( description ))

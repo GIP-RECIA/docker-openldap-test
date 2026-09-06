@@ -784,6 +784,57 @@ attributetype (ENT_globAttPrefixe:190 NAME 'ENTEleveINE'
 	SYNTAX ENT_UTF8String )
 
 #------------------------------------------#
+# ENTEleveStructureRattachIdMEN            #
+#------------------------------------------#
+# Secondaire                               #
+# String UTF8 monovalue                    #
+#------------------------------------------#
+attributetype (ENT_globAttPrefixe:196 NAME 'ENTEleveStructureRattachIdMEN'
+	DESC 'Identifiant SCONET pour les eleves de l enseignement agricole'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SINGLE-VALUE
+	SYNTAX ENT_UTF8String )
+
+#--------------------------------------------#
+# ENTEleveEnseignementsEtablissementsAccueil #
+#--------------------------------------------#
+# Secondaire                                 #
+# String UTF8 multivaluee                    #
+#--------------------------------------------#
+attributetype (ENT_globAttPrefixe:197 NAME 'ENTEleveEnseignementsEtablissementsAccueil'
+	DESC 'Enseignements dans autres etablissements'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SYNTAX ENT_UTF8String )
+
+#------------------------------------------#
+# ENTEleveDateEntreeStructRattach          #
+#------------------------------------------#
+# Secondaire                               #
+# String UTF8 monovalue                    #
+#------------------------------------------#
+attributetype (ENT_globAttPrefixe:198 NAME 'ENTEleveDateEntreeStructRattach'
+	DESC 'Date d admission dans l etablissement'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SINGLE-VALUE
+	SYNTAX ENT_UTF8String )
+
+#------------------------------------------#
+# ENTEleveDateSortieStructRattach          #
+#------------------------------------------#
+# Secondaire                               #
+# String UTF8 monovalue                    #
+#------------------------------------------#
+attributetype (ENT_globAttPrefixe:199 NAME 'ENTEleveDateSortieStructRattach'
+	DESC 'Date de radiation dans l etablissement'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SINGLE-VALUE
+	SYNTAX ENT_UTF8String )
+
+#------------------------------------------#
 # ENTEleve                                 #
 #------------------------------------------#
 # Secondaire                               #
@@ -804,7 +855,8 @@ objectclass ( ENT_globClassPrefixe:2 NAME 'ENTEleve'
 			  ENTEleveGroupes $ ENTEleveEnsRespStage $ ENTEleveEnsTutStage $
 			  ENTEleveEntrTutStage $ ENTEleveEntrAutres $ ENTEleveDelegClasse $
 			  ENTEleveDelegAutres $ ENTEleveMajeurAnticipe $ ENTEleveStructRattachId $
-			  ENTEleveINE $ ENTEleveAdresseRel ) )
+			  ENTEleveStructureRattachIdMEN $ ENTEleveINE $ ENTEleveAdresseRel $
+			  ENTEleveEnseignementsEtablissementsAccueil $ ENTEleveDateEntreeStructRattach $ ENTEleveDateSortieStructRattach ) )
 
 
 
@@ -1005,13 +1057,12 @@ objectclass ( ENT_globClassPrefixe:4 NAME 'ENTAuxEnseignant'
 # ENTAuxNonEnsServAc                       #
 #------------------------------------------#
 # Secondaire                               #
-# String UTF8 monovaluee                   #
+# String UTF8 multivalue                   #
 #------------------------------------------#
 attributetype (ENT_globAttPrefixe:153 NAME 'ENTAuxNonEnsServAcService'
-	DESC 'Service'
+	DESC 'Services'
 	EQUALITY caseIgnoreMatch
 	SUBSTR caseIgnoreSubstringsMatch
-	SINGLE-VALUE
 	SYNTAX ENT_UTF8String )
 
 #------------------------------------------#
@@ -1059,13 +1110,12 @@ objectclass ( ENT_globClassPrefixe:5 NAME 'ENTAuxNonEnsServAc'
 # ENTAuxNonEnsCollLocService              #
 #------------------------------------------#
 # Secondaire                               #
-# String UTF8 monovaluee                   #
+# String UTF8 multivalue                   #
 #------------------------------------------#
 attributetype (ENT_globAttPrefixe:157 NAME 'ENTAuxNonEnsCollLocService'
-	DESC 'Service'
+	DESC 'Services'
 	EQUALITY caseIgnoreMatch
 	SUBSTR caseIgnoreSubstringsMatch
-	SINGLE-VALUE
 	SYNTAX ENT_UTF8String )
 
 #------------------------------------------#
@@ -1113,13 +1163,12 @@ objectclass ( ENT_globClassPrefixe:6 NAME 'ENTAuxNonEnsCollLoc'
 # ENTAuxNonEnsEtabService                  #
 #------------------------------------------#
 # Secondaire                               #
-# String UTF8 monovaluee                   #
+# String UTF8 multivalue                   #
 #------------------------------------------#
 attributetype (ENT_globAttPrefixe:161 NAME 'ENTAuxNonEnsEtabService'
-	DESC 'Service'
+	DESC 'Services'
 	EQUALITY caseIgnoreMatch
 	SUBSTR caseIgnoreSubstringsMatch
-	SINGLE-VALUE
 	SYNTAX ENT_UTF8String )
 
 #------------------------------------------#
@@ -1141,13 +1190,12 @@ objectclass ( ENT_globClassPrefixe:7 NAME 'ENTAuxNonEnsEtab'
 # ENTAuxPersExt                            #
 #------------------------------------------#
 # Secondaire                               #
-# String UTF8 monovaluee                   #
+# String UTF8 multivalue                   #
 #------------------------------------------#
 attributetype (ENT_globAttPrefixe:163 NAME 'ENTAuxPersExt'
-	DESC 'Service'
+	DESC 'Services'
 	EQUALITY caseIgnoreMatch
 	SUBSTR caseIgnoreSubstringsMatch
-	SINGLE-VALUE
 	SYNTAX ENT_UTF8String )
 
 #------------------------------------------#
