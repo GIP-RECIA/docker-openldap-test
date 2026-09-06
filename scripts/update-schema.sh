@@ -74,6 +74,6 @@ for mapping in \
 done
 
 docker compose down -v
-docker compose build --no-cache
+docker compose --profile schema-check build --no-cache
 docker compose up -d openldap
 docker compose --profile schema-check run --rm --no-deps schema-status

@@ -45,5 +45,5 @@ for mapping in \
 	image_file=${mapping#*:}
 diff -u "$source_schema_dir/$image_file" "$reference_schema_dir/$reference_file" || true
 done
-printf '%s\n' "SCHEMA_UPDATE_CHECK_REQUIRED: run ./scripts/check-schema-update.sh"
+printf '%s\n' "SCHEMA_UPDATE_REQUIRED"
 exit 42

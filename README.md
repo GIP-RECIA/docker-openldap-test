@@ -23,6 +23,14 @@ Pour un developpement local disposant du referentiel de schema, utiliser les scr
 
 `up.sh` affiche le statut de synchronisation du schema. `down.sh` arrete l'annuaire sans supprimer les volumes.
 
+Si une mise a jour est disponible mais que le demarrage doit continuer, utiliser :
+
+```sh
+./scripts/up.sh --no-check
+```
+
+Cette option execute toujours le controle mais ignore son code `42`.
+
 Pour verifier ou mettre a jour le schema, suivre cette sequence :
 
 ```sh
@@ -64,7 +72,7 @@ Pour demarrer OpenLDAP en mode detache tout en affichant le resultat du controle
 ./scripts/up.sh
 ```
 
-Cette commande retourne `42` si une mise a jour de schema est disponible.
+Cette commande retourne `42` si une mise a jour de schema est disponible. Dans ce cas, executer `./scripts/update-schema.sh` pour synchroniser le bootstrap ou `./scripts/up.sh --no-check` pour demarrer malgre la divergence.
 
 Pour arreter l'annuaire en conservant les volumes LDAP :
 
