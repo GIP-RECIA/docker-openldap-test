@@ -3,7 +3,8 @@ services:
     build:
       context: .docker
       dockerfile: ldap/Dockerfile
-    container_name: openldap-test
+    container_name: ldapsarapis
+    command: '--loglevel debug'
     init: true
     ports:
       - 389:389
@@ -20,36 +21,10 @@ services:
       - 'LDAP_READONLY_USER="false"'
     volumes:
       #- /srv/docker/openldap/container/data:/var/lib/ldap
-      - ldap-data:/var/lib/ldap:rw
+      - sarapis-ldap-data:/var/lib/ldap
       #- /srv/docker/openldap/container/config:/etc/ldap/slapd.d
-      - ldap-config:/etc/ldap/slapd.d:rw
-    healthcheck:
-      test: ["CMD-SHELL", "ldapsearch -x -H ldap://localhost -b '' -s base >/dev/null 2>&1"]
-      interval: 2s
-      timeout: 2s
-      retries: 15
-  schema-status:
-    build:
-      context: .docker
-      dockerfile: ldap/Dockerfile
-    entrypoint: ["/usr/local/bin/check-schema-revision"]
-    depends_on:
-      openldap:
-        condition: service_started
-    volumes:
-      - ${SCHEMA_REFERENCE_DIR:-.}:/schema-reference:ro
-    profiles: ["schema-check"]
-    restart: "no"
-#  phpldapadmin:
-#    image: osixia/phpldapadmin:latest
-#    container_name: phpldapadmin
-#    environment:
-#      PHPLDAPADMIN_LDAP_HOSTS: "openldap"
-#      PHPLDAPADMIN_HTTPS: "false"
-#    ports:
-#      - "8080:80"
-#    depends_on:
-#      - openldap
+      - sarapis-ldap-config:/etc/ldap/slapd.d
+
 volumes:
-  ldap-data: null
-  ldap-config: null
+  sarapis-ldap-data: null
+  sarapis-ldap-config: null
