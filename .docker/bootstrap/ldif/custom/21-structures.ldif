@@ -16,6 +16,7 @@ ENTStructureTypeStruct: LYCEE D ENSEIGNEMENT GENERAL
 ENTStructureUAI: 0290009C
 ESCODomaines: lycees.netocentre.fr
 ESCOStructureNomCourt:: TFlDw4lFIERFIEwnSVJPSVNF
+ESCOStructureServices: ENT
 facsimileTelephoneNumber: +33 2 98 41 09 01
 l: BREST CEDEX 2
 postalCode: 29223
@@ -39,6 +40,7 @@ ENTStructureTypeStruct: COLLEGE
 ENTStructureUAI: 0291595B
 ESCODomaines: lycees.netocentre.fr
 ESCOStructureNomCourt:: Q09MTMOIR0UgREUgTCdJUk9JU0U=
+ESCOStructureServices: ENT
 facsimileTelephoneNumber: +33 2 98 41 09 01
 l: BREST CEDEX 2
 postalCode: 29223
